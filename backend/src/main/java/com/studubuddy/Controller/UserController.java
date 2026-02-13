@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.studubuddy.Entities.User;
+import com.studubuddy.Services.UserService;
 import com.studubuddy.repository.Userrepository;
 
 @RestController
@@ -14,10 +15,10 @@ import com.studubuddy.repository.Userrepository;
 public class UserController {
 
     @Autowired
-    private Userrepository userRepository;
+    private UserService userService;
 
-    @PostMapping("/add")
-    public User addUser(@RequestBody User user) {
-        return userRepository.save(user);
+    @PostMapping("/register")
+    public User register(@RequestBody User user) {
+        return userService.registerUser(user);
     }
 }
