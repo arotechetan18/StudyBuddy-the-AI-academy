@@ -1,11 +1,11 @@
-package com.studubuddy.Services;
+package com.studybuddy.Services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.studubuddy.Entities.User;
-import com.studubuddy.repository.Userrepository;
+import com.studybuddy.Entities.User;
+import com.studybuddy.repository.Userrepository;
 
 @Service
 public class UserService {

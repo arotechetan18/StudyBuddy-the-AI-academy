@@ -1,4 +1,4 @@
-package com.studubuddy.Entities;
+package com.studybuddy.Entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -31,5 +31,6 @@ public class User {
 
     private String password;
 
-    private String role; // STUDENT or ADMIN
+@Column(nullable = false)
+private String role; // STUDENT or ADMIN
 }
