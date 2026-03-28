@@ -29,7 +29,7 @@ public class SecurityConfig {
 
         http
         .csrf(csrf -> csrf.disable())
-
+        .cors(cors -> {})
         .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/auth/**").permitAll()
                 .requestMatchers("/users/register").permitAll()
@@ -37,7 +37,6 @@ public class SecurityConfig {
                 .requestMatchers("/student/**").hasAuthority("STUDENT")
                 .anyRequest().authenticated()
         )
-
         .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();

@@ -7,8 +7,10 @@ import com.studybuddy.dto.LoginRequest;
 import com.studybuddy.dto.LoginResponse;
 import com.studybuddy.Services.AuthService;
 
+
 @RestController
 @RequestMapping("/auth")
+@CrossOrigin(origins = "http://localhost:5173")
 public class AuthController {
 
     @Autowired
