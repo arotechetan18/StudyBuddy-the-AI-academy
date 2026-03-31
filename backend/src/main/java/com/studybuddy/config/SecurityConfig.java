@@ -36,9 +36,14 @@ public class SecurityConfig {
                         .requestMatchers("/users/register").permitAll()
                         .requestMatchers("/admin/**").hasAuthority("ADMIN")
                         .requestMatchers("/student/**").hasAuthority("STUDENT")
-                         .requestMatchers("/courses/**").permitAll()
+                        .requestMatchers("/courses/**").permitAll()
                         .requestMatchers("/courses/all").permitAll()
                         .requestMatchers("/courses/create").hasAuthority("ADMIN")
+                        .requestMatchers("/courses/all").permitAll()
+                        .requestMatchers("/courses/{id}").permitAll()
+                        .requestMatchers("/courses/create").hasAuthority("ADMIN")
+                        .requestMatchers("/courses/update/**").hasAuthority("ADMIN")
+                        .requestMatchers("/courses/delete/**").hasAuthority("ADMIN")
                         .anyRequest().authenticated())
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 

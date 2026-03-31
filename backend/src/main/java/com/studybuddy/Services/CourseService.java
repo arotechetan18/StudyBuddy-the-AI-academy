@@ -22,4 +22,24 @@ public class CourseService {
         return courseRepository.findAll();
     }
 
+    public Course getCourseById(Long id){
+        return courseRepository.findById(id).orElse(null);
+    }
+
+    public Course updateCourse(Long id, Course updatedCourse){
+
+        Course course = courseRepository.findById(id).orElseThrow();
+
+        course.setTitle(updatedCourse.getTitle());
+        course.setDescription(updatedCourse.getDescription());
+        course.setPrice(updatedCourse.getPrice());
+        course.setLevel(updatedCourse.getLevel());
+
+        return courseRepository.save(course);
+    }
+
+    public String deleteCourse(Long id){
+        courseRepository.deleteById(id);
+        return "Course Deleted";
+    }
 }

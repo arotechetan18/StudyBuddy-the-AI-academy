@@ -26,4 +26,21 @@ public class CourseController {
         return courseService.getAllCourses();
     }
 
+    @GetMapping("/{id}")
+    public Course getCourse(@PathVariable Long id){
+        return courseService.getCourseById(id);
+    }
+
+    @PutMapping("/update/{id}")
+    public Course updateCourse(@PathVariable Long id,
+                               @RequestBody Course course){
+
+        return courseService.updateCourse(id, course);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public String deleteCourse(@PathVariable Long id){
+
+        return courseService.deleteCourse(id);
+    }
 }
