@@ -40,10 +40,12 @@ public class SecurityConfig {
                         .requestMatchers("/courses/all").permitAll()
                         .requestMatchers("/courses/create").hasAuthority("ADMIN")
                         .requestMatchers("/courses/all").permitAll()
+                         .requestMatchers("/ai/explain").permitAll()
                         .requestMatchers("/courses/{id}").permitAll()
                         .requestMatchers("/courses/create").hasAuthority("ADMIN")
                         .requestMatchers("/courses/update/**").hasAuthority("ADMIN")
                         .requestMatchers("/courses/delete/**").hasAuthority("ADMIN")
+                        .requestMatchers("/lessons/**").permitAll()
                         .anyRequest().authenticated())
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 
