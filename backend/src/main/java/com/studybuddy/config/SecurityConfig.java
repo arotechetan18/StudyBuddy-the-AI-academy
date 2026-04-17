@@ -46,6 +46,7 @@ public class SecurityConfig {
                         .requestMatchers("/courses/update/**").hasAuthority("ADMIN")
                         .requestMatchers("/courses/delete/**").hasAuthority("ADMIN")
                         .requestMatchers("/lessons/**").permitAll()
+                        .requestMatchers("/modules/**").permitAll()
                         .anyRequest().authenticated())
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 

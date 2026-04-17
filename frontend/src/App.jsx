@@ -4,7 +4,7 @@ import Register from "./pages/Register";
 import Courses from "./pages/Courses";
 import CreateCourse from "./pages/CreateCourse";
 import Classroom from "./pages/Classroom";
-
+import CourseDetails from "./pages/CourseDetails";
 
 function App() {
 
@@ -14,6 +14,9 @@ function App() {
 
             <Routes>
 
+
+
+                <Route path="/course/:id" element={<CourseDetails />} />
                 <Route path="/courses" element={<Courses />} />
                 <Route path="/create-course" element={<CreateCourse />} />
                 <Route path="/login" element={<Login />} />
