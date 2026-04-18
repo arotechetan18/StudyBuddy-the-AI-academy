@@ -1,29 +1,18 @@
 package com.studybuddy.Services;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.studybuddy.Entities.Lesson;
 import com.studybuddy.repository.LessonRepository;
-
-import java.util.List;
 
 @Service
 public class LessonService {
 
     @Autowired
-    private LessonRepository lessonRepository;
+    private LessonRepository repo;
 
-    public Lesson createLesson(Lesson lesson){
-
-        return lessonRepository.save(lesson);
-
+    public List<Lesson> getLessonsByModule(Long moduleId) {
+        return repo.findByModuleId(moduleId);
     }
-
-    public List<Lesson> getLessonsByCourse(Long courseId){
-
-        return lessonRepository.findByCourseId(courseId);
-
-    }
-
 }

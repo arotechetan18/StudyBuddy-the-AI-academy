@@ -1,12 +1,12 @@
 package com.studybuddy.Controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import com.studybuddy.Entities.Lesson;
 import com.studybuddy.Services.LessonService;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/lessons")
@@ -16,18 +16,8 @@ public class LessonController {
     @Autowired
     private LessonService lessonService;
 
-    @PostMapping("/create")
-    public Lesson createLesson(@RequestBody Lesson lesson){
-
-        return lessonService.createLesson(lesson);
-
+    @GetMapping("/{moduleId}")
+    public List<Lesson> getLessons(@PathVariable Long moduleId) {
+        return lessonService.getLessonsByModule(moduleId);
     }
-
-    @GetMapping("/course/{courseId}")
-    public List<Lesson> getLessons(@PathVariable Long courseId){
-
-        return lessonService.getLessonsByCourse(courseId);
-
-    }
-
 }

@@ -1,7 +1,15 @@
 package com.studybuddy.Entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 public class Lesson {
 
@@ -11,24 +19,9 @@ public class Lesson {
 
     private String title;
 
-    @Column(length = 5000)
+    private Long moduleId;
+
     private String content;
 
-    private Long courseId;
-
-    public Lesson() {}
-
-    public Long getId() { return id; }
-
-    public String getTitle() { return title; }
-
-    public void setTitle(String title) { this.title = title; }
-
-    public String getContent() { return content; }
-
-    public void setContent(String content) { this.content = content; }
-
-    public Long getCourseId() { return courseId; }
-
-    public void setCourseId(Long courseId) { this.courseId = courseId; }
+    // getters setters
 }
