@@ -15,4 +15,7 @@ public class LessonService {
     public List<Lesson> getLessonsByModule(Long moduleId) {
         return repo.findByModuleId(moduleId);
     }
+    public Lesson getLessonById(Long id) {
+    return repo.findById(id).orElseThrow();
+}
 }

@@ -20,4 +20,9 @@ public class LessonController {
     public List<Lesson> getLessons(@PathVariable Long moduleId) {
         return lessonService.getLessonsByModule(moduleId);
     }
+
+    @GetMapping("/view/{id}")
+public Lesson getLessonById(@PathVariable Long id) {
+    return lessonService.getLessonById(id);
+}
 }

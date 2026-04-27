@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import api from "../services/api";
+import { useNavigate } from "react-router-dom";
 
 function CourseDetails() {
 
+const navigate = useNavigate();
   const { id } = useParams();
   const [modules, setModules] = useState([]);
 

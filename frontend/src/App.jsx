@@ -21,7 +21,7 @@ function App() {
                 <Route path="/create-course" element={<CreateCourse />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
-
+                <Route path="/lesson/:id" element={<LessonPage />} />
                 <Route path="/classroom" element={<Classroom />} />
 
             </Routes>
